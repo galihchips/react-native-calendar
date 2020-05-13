@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
 import * as defaultStyle from '../style';
 
 const STYLESHEET_ID = 'stylesheet.calendar.main';
@@ -13,12 +13,10 @@ export default function getStyle(theme={}) {
       backgroundColor: appStyle.calendarBackground
     },
     week: {
-      marginTop: 2,
-      marginBottom: 2,
+      marginTop: Dimensions.get('window').height * 0.007,
       flexDirection: 'row',
       justifyContent: 'space-around'
     },
     ...(theme[STYLESHEET_ID] || {})
   });
 }
-

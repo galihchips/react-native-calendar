@@ -1,4 +1,4 @@
-import {StyleSheet, Platform} from 'react-native';
+import {StyleSheet, Platform, Dimensions} from 'react-native';
 import * as defaultStyle from '../../../style';
 
 const STYLESHEET_ID = 'stylesheet.day.basic';
@@ -7,10 +7,10 @@ export default function styleConstructor(theme={}) {
   const appStyle = {...defaultStyle, ...theme};
   return StyleSheet.create({
     base: {
-      width: 52,
-      height: 52,
-      alignItems : 'center',
-      justifyContent: 'center'
+      width: Dimensions.get('window').width * 0.13,
+      height: Dimensions.get('window').width * 0.13,
+      alignItems: 'center',
+      justifyContent : 'center'
     },
     text: {
       fontSize: appStyle.textDayFontSize,
